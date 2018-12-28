@@ -1,2 +1,10 @@
+flask
+flask_login
+flask_script
+peewee
+pycryptodome
 setuptools
 six
+social-auth-app-flask
+social-auth-app-flask-peewee
+social-auth-storage-peewee

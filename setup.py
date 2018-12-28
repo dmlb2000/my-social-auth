@@ -11,13 +11,21 @@ from setuptools import setup, find_packages
 INSTALL_REQS = parse_requirements('requirements.txt', session='hack')
 
 setup(
-    name='pacifica-service',
+    name='pacifica-auth',
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
     description='Pacifica Configuration Parser',
     author='David Brown',
     author_email='david.brown@pnnl.gov',
+    package_data={'pacifica.auth': [
+        'templates/home.html'
+    ]},
     packages=find_packages(),
     namespace_packages=['pacifica'],
+    entry_points={
+        'console_scripts': [
+            'pacifica-auth=pacifica.auth.__main__:main',
+        ]
+    },
     install_requires=[str(ir.req) for ir in INSTALL_REQS]
 )
